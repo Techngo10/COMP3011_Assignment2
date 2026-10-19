@@ -11,7 +11,6 @@
 package comp3011;
 
 import java.util.List;
-
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -45,8 +44,9 @@ public class VideoPlayerApp extends Application {
 
         controller = new VideoPlayerController(
                 commandLineController.isAudioRequested(),
+                commandLineController.getFrameProcessors(),
                 this::setVideoSize);
-
+        
         Scene scene = new Scene(controller.getView().getRoot());
         controller.installKeyboardShortcuts(scene);
 
