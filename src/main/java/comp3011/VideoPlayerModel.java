@@ -681,7 +681,7 @@ public class VideoPlayerModel {
                     displayPreparedFrame(frame, now);
                 }
             } else {
-                long targetTimeNs = playbackStartNs + frame.relativeTimestampUs() //  1_000L;
+                long targetTimeNs = playbackStartNs + frame.relativeTimestampUs(); //  1_000L;
                 if (playbackStartNs > 0 && targetTimeNs <= now) {
                     preparedFrames.poll();
                     displayPreparedFrame(frame, now);
@@ -713,7 +713,7 @@ public class VideoPlayerModel {
         // Compute the target from the current playback clock rather than baking
         // it into the frame. This keeps already-buffered frames correctly timed
         // across pause/resume clock adjustments.
-        long targetTimeNs = playbackStartNs + frame.relativeTimestampUs() //  1_000L;
+        long targetTimeNs = playbackStartNs + frame.relativeTimestampUs(); //  1_000L;
 
         // Dump some logging to the console once per second so that real time performance can be monitored.
         if (intFrameRate > 0 && frame.frameNumber() % intFrameRate == 0) {
